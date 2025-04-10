@@ -1,0 +1,210 @@
+/* Owner Setup Module Styles */
+.container {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('https://wallpaperaccess.com/full/1426870.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px) brightness(0.4);
+}
+
+.authCard {
+  background-color: rgba(30, 30, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.authCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #00c3ff, #0d64a6);
+}
+
+.formContent {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.formColumn {
+  flex: 1;
+  min-width: 250px;
+  padding: 0 10px;
+}
+
+.formControl {
+  background-color: rgba(10, 10, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  transition: all 0.2s;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.formControl:focus {
+  border-color: #00c3ff;
+  background-color: rgba(10, 10, 26, 0.8);
+  box-shadow: 0 0 0 0.25rem rgba(0, 195, 255, 0.25);
+}
+
+.formText {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.ownerIconContainer {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #00c3ff, #0d64a6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0, 195, 255, 0.3);
+}
+
+.ownerIcon {
+  font-size: 35px;
+  color: #000;
+}
+
+.setupTitle {
+  color: #00c3ff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.setupSubtitle {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.inputIcon {
+  margin-right: 0.5rem;
+  vertical-align: text-bottom;
+  color: #00c3ff;
+}
+
+.setupBtn {
+  background: linear-gradient(135deg, #00c3ff, #0d64a6);
+  border: none;
+  color: #000;
+  font-weight: 600;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.setupBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 195, 255, 0.3);
+}
+
+.setupBtn:disabled {
+  background: linear-gradient(135deg, #4a4a4a, #2a2a2a);
+  color: #aaa;
+}
+
+.loginLink {
+  color: #b0b0b0;
+  margin-top: 1rem;
+}
+
+.loginLink a {
+  color: #00c3ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.loginLink a:hover {
+  color: #5cf6ff;
+  text-decoration: underline;
+}
+
+.alert {
+  background-color: rgba(30, 30, 30, 0.9);
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.alertDanger {
+  border-color: rgba(220, 53, 69, 0.3);
+  color: #dc3545;
+}
+
+.alertSuccess {
+  border-color: rgba(40, 167, 69, 0.3);
+  color: #28a745;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .authCard {
+    padding: 1.5rem;
+  }
+  
+  .setupTitle {
+    font-size: 1.6rem;
+  }
+  
+  .ownerIconContainer {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .ownerIcon {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .formColumn {
+    flex: 0 0 100%;
+  }
+} 

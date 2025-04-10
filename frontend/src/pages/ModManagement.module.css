@@ -1,0 +1,1424 @@
+.modContainer {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.modHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.modTitle {
+  color: var(--primary-color);
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+  position: relative;
+  display: inline-block;
+}
+
+.modTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.modActionButton {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+  color: #000 !important;
+  fontWeight: 700 !important;
+  textTransform: uppercase !important;
+  letterSpacing: 1px !important;
+  padding: 8px 16px !important;
+  position: relative;
+  overflow: hidden;
+  zIndex: 1;
+  transition: transform 0.3s ease;
+}
+
+.modActionButton:hover {
+  transform: translateY(-2px);
+}
+
+.modCard {
+  borderRadius: 8px !important;
+  boxShadow: 0 8px 20px rgba(0, 0, 0, 0.4) !important;
+  backgroundColor: rgba(25, 25, 35, 0.9) !important;
+  border: 1px solid rgba(244, 180, 26, 0.1) !important;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.modCard:hover {
+  transform: translateY(-5px);
+  boxShadow: 0 12px 28px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(244, 180, 26, 0.2) !important;
+}
+
+.modCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.modCardTitle {
+  fontWeight: 700;
+  color: var(--primary-color);
+  marginBottom: 8px;
+}
+
+.modCardContent {
+  color: var(--text-secondary);
+  fontSize: 0.875rem;
+}
+
+.modCardIcon {
+  color: var(--primary-color);
+  backgroundColor: rgba(0, 195, 255, 0.1);
+  padding: 12px;
+  borderRadius: 50%;
+  marginRight: 16px;
+}
+
+.formControl {
+  marginBottom: 16px;
+}
+
+.formLabel {
+  color: var(--text-primary) !important;
+  fontWeight: 600;
+  marginBottom: 8px;
+}
+
+.textField {
+  backgroundColor: rgba(10, 10, 20, 0.6);
+  borderRadius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dialogTitle {
+  background: linear-gradient(90deg, rgba(15, 15, 25, 0.98), rgba(18, 18, 28, 0.97));
+  color: var(--primary-color);
+  fontWeight: 700;
+  textTransform: uppercase;
+  letterSpacing: 1px;
+  textAlign: center;
+  borderBottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dialogContent {
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(25, 25, 35, 0.95));
+  padding: 24px !important;
+}
+
+.dialogActions {
+  background: rgba(15, 15, 25, 0.98);
+  borderTop: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 16px 24px;
+}
+
+.cancelButton {
+  color: var(--text-secondary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.confirmButton {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+  color: #000 !important;
+  fontWeight: 700 !important;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  .modContainer {
+    padding: 16px;
+  }
+  
+  .modHeader {
+    flexDirection: column;
+    alignItems: flex-start;
+  }
+  
+  .modTitle {
+    fontSize: 1.5rem !important;
+  }
+  
+  .modActionButton {
+    width: 100%;
+  }
+  
+  .modCard {
+    padding: 16px !important;
+  }
+}
+
+.pageHeader {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(16,16,26,0.9) 0%, rgba(16,16,26,0.8) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.pageHeader:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.headerIcon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 15px rgba(33,150,243,0.3));
+  transition: all 0.3s ease;
+}
+
+.headerIcon:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(33,150,243,0.5));
+}
+
+.headerText h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  letter-spacing: 0.5px;
+}
+
+.headerText p {
+  color: rgba(255,255,255,0.7);
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  max-width: 500px;
+}
+
+.sectionTitle {
+  margin-bottom: 24px;
+  margin-top: 32px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.tabsContainer {
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, rgba(16,16,26,0.8) 0%, rgba(16,16,26,0.7) 100%);
+  border-radius: 12px;
+  padding: 4px;
+  overflow-x: auto;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.tabsContainer::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari and Opera */
+}
+
+.tab {
+  min-height: 48px;
+  text-transform: none !important;
+  font-weight: 500 !important;
+  color: rgba(255,255,255,0.7) !important;
+  background-color: transparent !important;
+  transition: all 0.2s ease;
+  border-radius: 8px !important;
+  margin: 2px !important;
+  opacity: 0.8;
+  padding: 4px 12px !important;
+  min-width: 140px !important;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  background-color: rgba(0,195,255,0.05) !important;
+  color: #fff !important;
+  opacity: 1;
+}
+
+.tab.Mui-selected {
+  background: linear-gradient(135deg, rgba(0,195,255,0.15) 0%, rgba(0,195,255,0.05) 100%) !important;
+  color: #00c3ff !important;
+  font-weight: 600 !important;
+  opacity: 1;
+  box-shadow: 0 2px 10px rgba(0,195,255,0.2);
+}
+
+.tab .MuiSvgIcon-root {
+  margin-right: 6px !important;
+  font-size: 1.2rem !important;
+}
+
+.tabPanel {
+  margin-top: 12px;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+}
+
+.statsGrid {
+  margin-bottom: 32px;
+}
+
+.actionButton {
+  border-radius: 8px;
+  text-transform: none;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-size: 1rem;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(16,16,26,0.9) 0%, rgba(16,16,26,0.8) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.quickActionsButton {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-radius: 12px;
+  text-transform: none;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.quickActionsButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.tableContainer {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.7) 0%, rgba(25, 25, 35, 0.7) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 16px;
+  margin-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 195, 255, 0.3) rgba(0, 0, 0, 0.2);
+}
+
+.tableContainer::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.tableContainer::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+  background: rgba(0, 195, 255, 0.3);
+  border-radius: 4px;
+}
+
+.tableContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 195, 255, 0.5);
+}
+
+.tableHeader {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid rgba(0, 195, 255, 0.1) !important;
+  font-size: 0.85rem !important;
+  padding: 16px 20px !important;
+  letter-spacing: 0.7px !important;
+  background: linear-gradient(135deg, rgba(0, 195, 255, 0.1) 0%, rgba(0, 195, 255, 0.05) 100%) !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+.tableCell {
+  color: #fff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  font-size: 0.9rem !important;
+  padding: 14px 20px !important;
+  transition: all 0.2s ease !important;
+  vertical-align: middle !important;
+}
+
+.tableRow {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tableRow:hover {
+  background-color: rgba(0, 195, 255, 0.05) !important;
+  backdrop-filter: blur(10px);
+}
+
+.tableRow:hover .tableCell {
+  border-bottom-color: rgba(0, 195, 255, 0.1) !important;
+}
+
+.tableRow:hover .iconButton {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cardHeader {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+  padding: 20px 24px;
+}
+
+.cardHeaderTitle {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.iconButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+  transform: translateY(2px);
+}
+
+.iconButton:hover {
+  transform: translateY(-1px);
+}
+
+.chip {
+  border-radius: 8px;
+  height: 32px;
+  padding: 0 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  transform: translateY(-1px);
+}
+
+.statusBox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+
+.statusBox:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+.emptyState {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.emptyState svg {
+  font-size: 4rem;
+  color: rgba(255,255,255,0.1);
+  margin-bottom: 16px;
+}
+
+.emptyState .text {
+  text-align: center;
+  max-width: 300px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 960px) {
+  .tabsContainer {
+    margin-bottom: 20px;
+    padding: 3px;
+  }
+  
+  .tab {
+    min-width: 130px !important;
+    padding: 4px 10px !important;
+    min-height: 44px;
+  }
+  
+  .modContainer {
+    padding: 16px;
+  }
+  
+  .pageHeader {
+    padding: 10px 14px;
+    margin-bottom: 14px;
+  }
+  
+  .headerText h1 {
+    font-size: 1.5rem;
+  }
+  
+  .headerText p {
+    font-size: 0.85rem;
+  }
+  
+  .statsGrid {
+    margin-bottom: 24px;
+  }
+  
+  .card {
+    margin-bottom: 16px;
+  }
+  
+  :global(.MuiGrid-item) {
+    padding: 8px !important;
+  }
+  
+  :global(.MuiGrid-container) {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .tabsContainer {
+    margin-bottom: 16px;
+    padding: 3px;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .tab {
+    min-width: auto !important;
+    flex: 0 0 auto;
+    padding: 4px 8px !important;
+    min-height: 40px;
+    font-size: 0.85rem !important;
+  }
+  
+  .tab .MuiSvgIcon-root {
+    font-size: 1.1rem !important;
+    margin-right: 4px !important;
+  }
+  
+  /* Hide the scroll but allow scrolling for mobile touch */
+  :global(.MuiTabs-scroller) {
+    overflow-x: auto !important;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
+  }
+  
+  :global(.MuiTabs-scroller::-webkit-scrollbar) {
+    display: none; /* For Chrome, Safari and Opera */
+  }
+  
+  /* Make the tabs container take up full width */
+  :global(.MuiTabs-flexContainer) {
+    display: inline-flex !important;
+    width: max-content !important;
+  }
+  
+  .modContainer {
+    padding: 12px;
+  }
+  
+  .modHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .pageHeader {
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+  
+  .headerIcon {
+    font-size: 2.5rem;
+  }
+  
+  .headerText h1 {
+    font-size: 1.3rem;
+  }
+  
+  .headerText p {
+    font-size: 0.8rem;
+  }
+  
+  .tableHeader, .tableCell {
+    padding: 12px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .tableRow .iconButton {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .actionButton, .quickActionsButton {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .cardHeader {
+    padding: 16px;
+  }
+  
+  .cardHeaderTitle {
+    font-size: 1rem;
+  }
+  
+  .statusBox {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+  
+  :global(.MuiGrid-item) {
+    padding: 6px !important;
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  :global(.MuiGrid-container) {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Force full width for smaller grid items on mobile */
+  :global(.MuiGrid-grid-xs-6),
+  :global(.MuiGrid-grid-xs-4),
+  :global(.MuiGrid-grid-xs-3) {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabsContainer {
+    margin-bottom: 12px;
+    padding: 2px;
+  }
+  
+  .tab {
+    min-height: 38px;
+    padding: 3px 6px !important;
+    font-size: 0.75rem !important;
+    min-width: 80px !important;
+  }
+  
+  .tab .MuiSvgIcon-root {
+    font-size: 1rem !important;
+    margin-right: 3px !important;
+  }
+  
+  .modContainer {
+    padding: 8px;
+  }
+  
+  .pageHeader {
+    padding: 8px 10px;
+  }
+  
+  .headerIcon {
+    font-size: 2rem;
+  }
+  
+  .headerText h1 {
+    font-size: 1.1rem;
+  }
+  
+  .headerText p {
+    font-size: 0.75rem;
+  }
+  
+  .tableHeader, .tableCell {
+    padding: 8px 6px;
+    font-size: 0.7rem;
+  }
+  
+  :global(.MuiGrid-item) {
+    padding: 4px !important;
+  }
+  
+  .cardContent {
+    padding: 12px !important;
+  }
+}
+
+.dateFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dateFilterItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dateFilterIcon {
+  color: var(--primary-color) !important;
+  font-size: 1.1rem !important;
+}
+
+.dateFilterText {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+}
+
+.dateFilterCustom {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.resellerCount {
+  margin-left: auto;
+}
+
+.selectInput {
+  background-color: rgba(30, 30, 40, 0.8) !important;
+  border-radius: 8px !important;
+  min-width: 150px !important;
+}
+
+.textField {
+  background-color: rgba(30, 30, 40, 0.8) !important;
+  border-radius: 8px !important;
+  width: 150px !important;
+}
+
+.resellerInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.resellerIcon {
+  color: var(--primary-color) !important;
+  font-size: 1.2rem !important;
+  background-color: rgba(0, 195, 255, 0.1);
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 195, 255, 0.2);
+}
+
+.balance {
+  font-weight: 600;
+  font-family: 'Roboto Mono', monospace;
+  background: linear-gradient(90deg, #00c3ff, #2196f3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.1rem;
+  display: inline-block;
+}
+
+.expiryInfo, .registrationInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.expiryInfo .icon, .registrationInfo .icon {
+  font-size: 1rem !important;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.editButton {
+  width: 36px !important;
+  height: 36px !important;
+  background-color: rgba(33, 150, 243, 0.1) !important;
+  border-radius: 8px !important;
+  color: #2196f3 !important;
+  transition: all 0.2s ease !important;
+  opacity: 0.7;
+  transform: translateY(2px);
+}
+
+.editButton:hover {
+  background-color: rgba(33, 150, 243, 0.2) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3) !important;
+}
+
+.copyButton {
+  color: #2196f3;
+  background-color: rgba(33, 150, 243, 0.1);
+}
+
+.copyButton:hover {
+  background-color: rgba(33, 150, 243, 0.2);
+}
+
+.deleteButton {
+  width: 36px !important;
+  height: 36px !important;
+  background-color: rgba(244, 67, 54, 0.1) !important;
+  border-radius: 8px !important;
+  color: #f44336 !important;
+  transition: all 0.2s ease !important;
+  opacity: 0.7;
+  transform: translateY(2px);
+}
+
+.deleteButton:hover {
+  background-color: rgba(244, 67, 54, 0.2) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3) !important;
+}
+
+.noData {
+  text-align: center !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  padding: 32px !important;
+  font-style: italic !important;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 100%);
+}
+
+.code {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(33, 150, 243, 0.1);
+  border: 1px solid rgba(33, 150, 243, 0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #2196f3;
+}
+
+.code .icon {
+  font-size: 1rem;
+}
+
+.duration {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.actions .icon {
+  font-size: 1.1rem;
+}
+
+.emptyStateText {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+}
+
+.emptyStateSubtext {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.title {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.text {
+  color: #fff;
+}
+
+.cardContent {
+  padding: 16px;
+}
+
+.codeBlock {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.codeBlock code {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.outlinedButton {
+  color: var(--primary-color);
+  border: 1px solid rgba(0, 195, 255, 0.5);
+}
+
+.outlinedButton:hover {
+  background-color: rgba(0, 195, 255, 0.1);
+  border-color: var(--primary-color);
+}
+
+.dialogPaper {
+  background-color: #1e1e2f;
+  color: #fff;
+  border-radius: 10px;
+  min-width: 400px;
+}
+
+.dialogHeader {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Additional Media Queries for New Elements */
+@media (max-width: 960px) {
+  .dateFilter {
+    padding: 8px;
+  }
+  
+  .dateFilterCustom {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+  
+  .textField {
+    width: 100%;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .dialogPaper {
+    min-width: 300px;
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .dateFilter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .resellerCount, .referralCount {
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+  }
+  
+  .code {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+  
+  .code .icon {
+    font-size: 0.8rem;
+  }
+  
+  .codeBlock {
+    padding: 8px;
+    font-size: 0.8rem;
+    overflow-x: auto;
+  }
+  
+  .actions {
+    flex-direction: row;
+  }
+  
+  .dialogPaper {
+    min-width: 280px;
+  }
+  
+  .dialogHeader {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dateFilter {
+    padding: 6px;
+  }
+  
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .actions .copyButton, .actions .deleteButton, .actions .editButton {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* MuiGrid Mobile Responsive Styles */
+.gridContainer {
+  margin-top: 0 !important;
+  width: 100% !important;
+}
+
+.gridItem {
+  padding: 8px !important;
+}
+
+/* Apply to all Grid children */
+:global(.MuiGrid-item) {
+  display: flex;
+  flex-direction: column;
+}
+
+:global(.MuiGrid-container) {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Mobile Responsiveness Updates */
+@media (max-width: 960px) {
+  .modContainer {
+    padding: 16px;
+  }
+  
+  .pageHeader {
+    padding: 10px 14px;
+    margin-bottom: 14px;
+  }
+  
+  .headerText h1 {
+    font-size: 1.5rem;
+  }
+  
+  .headerText p {
+    font-size: 0.85rem;
+  }
+  
+  .statsGrid {
+    margin-bottom: 24px;
+  }
+  
+  .card {
+    margin-bottom: 16px;
+  }
+  
+  :global(.MuiGrid-item) {
+    padding: 8px !important;
+  }
+  
+  :global(.MuiGrid-container) {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .modContainer {
+    padding: 12px;
+  }
+  
+  .modHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .pageHeader {
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+  
+  .headerIcon {
+    font-size: 2.5rem;
+  }
+  
+  .headerText h1 {
+    font-size: 1.3rem;
+  }
+  
+  .headerText p {
+    font-size: 0.8rem;
+  }
+  
+  .tabsContainer {
+    margin-bottom: 16px;
+    padding: 3px;
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .tab {
+    min-width: auto !important;
+    flex: 0 0 auto;
+    padding: 4px 8px !important;
+    min-height: 40px;
+    font-size: 0.85rem !important;
+  }
+  
+  .tab .MuiSvgIcon-root {
+    font-size: 1.1rem !important;
+    margin-right: 4px !important;
+  }
+  
+  /* Hide the scroll but allow scrolling for mobile touch */
+  :global(.MuiTabs-scroller) {
+    overflow-x: auto !important;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
+  }
+  
+  :global(.MuiTabs-scroller::-webkit-scrollbar) {
+    display: none; /* For Chrome, Safari and Opera */
+  }
+  
+  /* Make the tabs container take up full width */
+  :global(.MuiTabs-flexContainer) {
+    display: inline-flex !important;
+    width: max-content !important;
+  }
+  
+  .tableHeader, .tableCell {
+    padding: 12px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .tableRow .iconButton {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .actionButton, .quickActionsButton {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .cardHeader {
+    padding: 16px;
+  }
+  
+  .cardHeaderTitle {
+    font-size: 1rem;
+  }
+  
+  .statusBox {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+  
+  :global(.MuiGrid-item) {
+    padding: 6px !important;
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  :global(.MuiGrid-container) {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Force full width for smaller grid items on mobile */
+  :global(.MuiGrid-grid-xs-6),
+  :global(.MuiGrid-grid-xs-4),
+  :global(.MuiGrid-grid-xs-3) {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .modContainer {
+    padding: 8px;
+  }
+  
+  .pageHeader {
+    padding: 8px 10px;
+  }
+  
+  .headerIcon {
+    font-size: 2rem;
+  }
+  
+  .headerText h1 {
+    font-size: 1.1rem;
+  }
+  
+  .headerText p {
+    font-size: 0.75rem;
+  }
+  
+  .tab {
+    min-width: 100px;
+    min-height: 40px;
+    font-size: 0.8rem;
+  }
+  
+  .tableHeader, .tableCell {
+    padding: 8px 6px;
+    font-size: 0.7rem;
+  }
+  
+  :global(.MuiGrid-item) {
+    padding: 4px !important;
+  }
+  
+  .cardContent {
+    padding: 12px !important;
+  }
+}
+
+/* Text Rendering Improvements */
+.tableCell, .tableHeader, .statusBox, .dateFilterText, .chip, .balance, 
+.cardTitle, .expiryInfo, .registrationInfo, .noData, .cardContent {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure text doesn't get too small on mobile */
+@media (max-width: 600px) {
+  .tableCell {
+    font-size: 0.85rem !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+  }
+  
+  .tableHeader {
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+  }
+  
+  .balance, .expiryInfo, .registrationInfo {
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+  }
+  
+  .statusBox {
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    padding: 4px 10px !important;
+  }
+  
+  .cardTitle {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+  }
+  
+  .chip {
+    font-size: 0.8rem !important;
+    height: 28px !important;
+  }
+}
+
+/* Adjust backdrop-filter for better rendering */
+.tableContainer, .card, .statusBox {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Improve contrast for better readability */
+.tableCell {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.tableHeader {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Fix for Safari and iOS rendering */
+@supports (-webkit-touch-callout: none) {
+  .tableCell, .tableHeader, .statusBox, .dateFilterText, .chip, .balance {
+    transform: translateZ(0);
+  }
+}
+
+/* Status Styles */
+.statusContainer {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 50%;
+  gap: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.statusContainer:hover {
+  transform: scale(1.05);
+}
+
+.statusDot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: currentColor;
+  position: relative;
+  cursor: default;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.statusActive .statusDot {
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.6);
+  animation: pulse 2s infinite;
+}
+
+.statusInactive .statusDot {
+  background-color: #f44336; /* Red color for expired */
+  box-shadow: 0 0 8px rgba(244, 67, 54, 0.4);
+  animation: none;
+}
+
+.statusIcon {
+  font-size: 1.1rem !important;
+  opacity: 0.8;
+  margin-left: 8px;
+  color: #ff9800;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+.statusActive {
+  color: #4caf50;
+}
+
+.statusInactive {
+  color: #f44336;
+}
+
+/* Key Management Styles */
+.recentKeysContainer {
+  margin-top: 8px;
+}
+
+.key {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.keyIcon {
+  color: var(--primary-color);
+  font-size: 1.1rem !important;
+}
+
+.keyText {
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.emptyIcon {
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 3rem !important;
+  margin-bottom: 16px;
+}
+
+.emptyText {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+  max-width: 300px;
+  line-height: 1.5;
+} 

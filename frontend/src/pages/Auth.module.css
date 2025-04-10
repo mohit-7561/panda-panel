@@ -1,0 +1,571 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden; /* Prevent animation elements from causing scroll */
+}
+
+.auth-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.pinimg.com/originals/95/a6/3f/95a63f811bcbd8ce2fc943d3e40424b1.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3) saturate(0.8);
+  z-index: -2;
+}
+
+/* Matrix code rain animation */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.matrix-column {
+  position: absolute;
+  top: -100%;
+  width: 20px;
+  color: rgba(0, 195, 255, 0.6);
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 20px;
+  white-space: nowrap;
+  text-align: center;
+  user-select: none;
+  opacity: 0;
+  animation: matrixRain 20s linear infinite;
+}
+
+.matrix-column:nth-child(1) { left: 5%; animation-delay: 0.5s; }
+.matrix-column:nth-child(2) { left: 15%; animation-delay: 2.5s; animation-duration: 25s; }
+.matrix-column:nth-child(3) { left: 25%; animation-delay: 1s; }
+.matrix-column:nth-child(4) { left: 35%; animation-delay: 4s; animation-duration: 15s; }
+.matrix-column:nth-child(5) { left: 45%; animation-delay: 0s; }
+.matrix-column:nth-child(6) { left: 55%; animation-delay: 3.5s; animation-duration: 18s; }
+.matrix-column:nth-child(7) { left: 65%; animation-delay: 2s; }
+.matrix-column:nth-child(8) { left: 75%; animation-delay: 1.5s; animation-duration: 22s; }
+.matrix-column:nth-child(9) { left: 85%; animation-delay: 3s; }
+.matrix-column:nth-child(10) { left: 95%; animation-delay: 4.5s; animation-duration: 28s; }
+
+@keyframes matrixRain {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+}
+
+/* Particle effect */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: rgba(0, 195, 255, 0.6);
+  border-radius: 50%;
+  animation: particle 8s ease-in-out infinite;
+  opacity: 0;
+}
+
+/* Original particles */
+.particle:nth-child(11) { left: 10%; top: 20%; animation-delay: 0s; }
+.particle:nth-child(12) { left: 20%; top: 80%; animation-delay: 1s; }
+.particle:nth-child(13) { left: 30%; top: 40%; animation-delay: 2s; }
+.particle:nth-child(14) { left: 40%; top: 60%; animation-delay: 3s; }
+.particle:nth-child(15) { left: 50%; top: 30%; animation-delay: 4s; }
+.particle:nth-child(16) { left: 60%; top: 70%; animation-delay: 5s; }
+.particle:nth-child(17) { left: 70%; top: 10%; animation-delay: 6s; }
+.particle:nth-child(18) { left: 80%; top: 50%; animation-delay: 7s; }
+.particle:nth-child(19) { left: 90%; top: 25%; animation-delay: 3.5s; }
+.particle:nth-child(20) { left: 95%; top: 75%; animation-delay: 2.5s; }
+
+/* Additional particles with more variety */
+.particle:nth-child(21) { left: 5%; top: 35%; animation-delay: 1.2s; width: 4px; height: 4px; background-color: rgba(255, 105, 180, 0.5); }
+.particle:nth-child(22) { left: 15%; top: 65%; animation-delay: 3.7s; width: 2px; height: 2px; }
+.particle:nth-child(23) { left: 25%; top: 15%; animation-delay: 5.2s; width: 5px; height: 5px; background-color: rgba(255, 223, 0, 0.4); }
+.particle:nth-child(24) { left: 35%; top: 85%; animation-delay: 0.8s; width: 3px; height: 3px; }
+.particle:nth-child(25) { left: 45%; top: 5%; animation-delay: 4.3s; width: 4px; height: 4px; background-color: rgba(50, 205, 50, 0.4); }
+.particle:nth-child(26) { left: 55%; top: 45%; animation-delay: 2.8s; width: 2px; height: 2px; }
+.particle:nth-child(27) { left: 65%; top: 55%; animation-delay: 6.5s; width: 4px; height: 4px; background-color: rgba(138, 43, 226, 0.4); }
+.particle:nth-child(28) { left: 75%; top: 35%; animation-delay: 1.5s; width: 3px; height: 3px; }
+.particle:nth-child(29) { left: 85%; top: 90%; animation-delay: 3.9s; width: 5px; height: 5px; background-color: rgba(255, 165, 0, 0.4); }
+.particle:nth-child(30) { left: 92%; top: 12%; animation-delay: 5.6s; width: 2px; height: 2px; }
+
+/* Extra particles with new animations */
+.particle:nth-child(31) { left: 7%; top: 48%; animation-delay: 0.3s; width: 6px; height: 6px; background-color: rgba(0, 255, 255, 0.5); animation: particleTrail 15s linear infinite; }
+.particle:nth-child(32) { left: 18%; top: 72%; animation-delay: 2.1s; width: 4px; height: 4px; background-color: rgba(255, 20, 147, 0.4); animation: particleTrail 12s linear infinite; }
+.particle:nth-child(33) { left: 33%; top: 22%; animation-delay: 4.4s; width: 5px; height: 5px; background-color: rgba(124, 252, 0, 0.6); animation: particlePulse 8s ease-in-out infinite; }
+.particle:nth-child(34) { left: 52%; top: 88%; animation-delay: 1.8s; width: 7px; height: 7px; background-color: rgba(255, 0, 255, 0.4); animation: particlePulse 10s ease-in-out infinite; }
+.particle:nth-child(35) { left: 68%; top: 30%; animation-delay: 3.2s; width: 6px; height: 6px; background-color: rgba(255, 215, 0, 0.5); animation: particleTrail 14s linear infinite; }
+.particle:nth-child(36) { left: 82%; top: 62%; animation-delay: 5.7s; width: 5px; height: 5px; background-color: rgba(30, 144, 255, 0.5); animation: particleSpin 9s linear infinite; }
+.particle:nth-child(37) { left: 94%; top: 15%; animation-delay: 0.7s; width: 8px; height: 2px; background-color: rgba(240, 128, 128, 0.4); animation: particleSpin 11s linear infinite; }
+.particle:nth-child(38) { left: 12%; top: 95%; animation-delay: 2.3s; width: 3px; height: 6px; background-color: rgba(123, 104, 238, 0.5); animation: particleSpin 13s linear infinite; }
+.particle:nth-child(39) { left: 42%; top: 38%; animation-delay: 6.2s; width: 2px; height: 8px; background-color: rgba(144, 238, 144, 0.4); animation: particleTrail 16s linear infinite; }
+.particle:nth-child(40) { left: 78%; top: 45%; animation-delay: 4.9s; width: 7px; height: 7px; border-radius: 0; background-color: rgba(255, 127, 80, 0.5); animation: particleSpin 10s linear infinite; }
+
+/* Falling stars */
+.particle:nth-child(41) { left: 25%; top: -5%; animation-delay: 1.5s; width: 2px; height: 2px; background: white; box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.7); animation: fallingStar 4s linear infinite; }
+.particle:nth-child(42) { left: 67%; top: -5%; animation-delay: 3.2s; width: 3px; height: 3px; background: white; box-shadow: 0 0 7px 3px rgba(255, 255, 255, 0.7); animation: fallingStar 5s linear infinite; }
+.particle:nth-child(43) { left: 80%; top: -5%; animation-delay: 6.3s; width: 2px; height: 2px; background: white; box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.7); animation: fallingStar 3.5s linear infinite; }
+.particle:nth-child(44) { left: 10%; top: -5%; animation-delay: 9.4s; width: 3px; height: 3px; background: white; box-shadow: 0 0 7px 3px rgba(255, 255, 255, 0.7); animation: fallingStar 4.5s linear infinite; }
+.particle:nth-child(45) { left: 45%; top: -5%; animation-delay: 12.6s; width: 2px; height: 2px; background: white; box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.7); animation: fallingStar 6s linear infinite; }
+
+/* Add new animations for the extra particles */
+@keyframes particleTrail {
+  0% {
+    transform: translateY(-50px) translateX(-20px) scale(0);
+    opacity: 0;
+    box-shadow: none;
+  }
+  5% {
+    opacity: 0.7;
+    box-shadow: 0 0 10px 2px currentColor;
+  }
+  95% {
+    opacity: 0.5;
+    box-shadow: 0 0 15px 3px currentColor;
+  }
+  100% {
+    transform: translateY(50px) translateX(20px) scale(0);
+    opacity: 0;
+    box-shadow: none;
+  }
+}
+
+@keyframes particlePulse {
+  0%, 100% {
+    transform: scale(0.5);
+    opacity: 0.3;
+    box-shadow: 0 0 5px 1px currentColor;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+    box-shadow: 0 0 15px 3px currentColor;
+  }
+}
+
+@keyframes particleSpin {
+  0% {
+    transform: rotate(0deg) translateX(0) translateY(0) scale(0.5);
+    opacity: 0.3;
+  }
+  25% {
+    transform: rotate(90deg) translateX(20px) translateY(-15px) scale(1.2);
+    opacity: 0.7;
+  }
+  50% {
+    transform: rotate(180deg) translateX(35px) translateY(5px) scale(1);
+    opacity: 0.5;
+  }
+  75% {
+    transform: rotate(270deg) translateX(15px) translateY(25px) scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(360deg) translateX(0) translateY(0) scale(0.5);
+    opacity: 0.3;
+  }
+}
+
+@keyframes fallingStar {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) translateX(60px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+/* Glowing effect */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 195, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 195, 255, 0.5);
+  }
+}
+
+/* Shimmer effect for the papers */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.auth-paper {
+  border-radius: 8px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  background-color: rgba(30, 30, 30, 0.85) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(244, 180, 26, 0.2) !important;
+  overflow: hidden;
+  position: relative;
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-out;
+  padding: 2rem !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-paper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+  background-size: 200% auto;
+  animation: shimmer 3s infinite linear;
+}
+
+.auth-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 8px rgba(0, 195, 255, 0.8));
+  max-width: 180px;
+  border-radius: 10px;
+  animation: pulse 2s infinite ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+@keyframes pulse {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(0, 195, 255, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 195, 255, 0.9));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(0, 195, 255, 0.6));
+  }
+}
+
+.auth-title {
+  position: relative;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+  text-align: center;
+}
+
+.auth-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+  background-size: 200% auto;
+  animation: shimmer 3s infinite linear;
+}
+
+.form-control-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.form-control-group:focus-within {
+  transform: translateY(-2px);
+}
+
+.auth-form {
+  width: 100%;
+}
+
+.submit-button {
+  margin-top: 1rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+  border: none !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+  width: 100%;
+  padding: 10px 0 !important;
+  border-radius: 30px !important;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 195, 255, 0.4) !important;
+}
+
+.submit-button:active {
+  transform: translateY(1px);
+}
+
+.submit-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.5s ease;
+}
+
+.submit-button:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(20);
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.auth-link {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.auth-link:hover {
+  text-shadow: 0 0 8px rgba(0, 195, 255, 0.5);
+}
+
+.auth-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+.auth-link:hover::after {
+  width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  .auth-container {
+    padding: 1rem;
+  }
+  
+  .auth-paper {
+    padding: 1.5rem !important;
+    margin: 0 0.5rem;
+    width: calc(100% - 1rem);
+    max-width: none;
+  }
+  
+  .auth-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .auth-logo {
+    max-width: 140px;
+  }
+  
+  .submit-button {
+    padding: 10px 0 !important;
+  }
+  
+  /* Adjust matrix animation for mobile */
+  .matrix-column {
+    font-size: 12px;
+    line-height: 16px;
+    width: 16px;
+  }
+  
+  /* Hide some matrix columns on smaller screens */
+  .matrix-column:nth-child(2),
+  .matrix-column:nth-child(4),
+  .matrix-column:nth-child(6),
+  .matrix-column:nth-child(8) {
+    display: none;
+  }
+  
+  /* Adjust particles for mobile */
+  .particle {
+    animation-duration: 10s;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 0.75rem;
+    min-height: 100dvh; /* Use dynamic viewport height for mobile */
+  }
+  
+  .auth-paper {
+    padding: 1.25rem !important;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .auth-title {
+    font-size: 1.35rem !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-control-group {
+    margin-bottom: 1rem;
+  }
+  
+  /* Further optimize animations for smaller screens */
+  .matrix-column:nth-child(3),
+  .matrix-column:nth-child(7) {
+    display: none;
+  }
+  
+  .particle:nth-child(11),
+  .particle:nth-child(13),
+  .particle:nth-child(15),
+  .particle:nth-child(17),
+  .particle:nth-child(19) {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .auth-title {
+    font-size: 1.25rem !important;
+  }
+  
+  .auth-paper {
+    padding: 1rem !important;
+  }
+  
+  .auth-logo {
+    max-width: 120px;
+    margin-bottom: 1rem;
+  }
+  
+  .submit-button {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Add different animation for some particles */
+.particle:nth-child(21),
+.particle:nth-child(23),
+.particle:nth-child(25),
+.particle:nth-child(27),
+.particle:nth-child(29) {
+  animation: particleAlt 10s ease-in-out infinite;
+}
+
+@keyframes particle {
+  0% {
+    transform: scale(0) translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1.5) translate(10px, -10px) rotate(45deg);
+    opacity: 0.7;
+    box-shadow: 0 0 10px 2px rgba(0, 195, 255, 0.3);
+  }
+  40% {
+    transform: scale(1) translate(20px, -5px) rotate(90deg);
+    opacity: 0.5;
+  }
+  60% {
+    transform: scale(2) translate(10px, 5px) rotate(135deg);
+    opacity: 0.7;
+    box-shadow: 0 0 15px 3px rgba(0, 195, 255, 0.4);
+  }
+  80% {
+    transform: scale(1) translate(5px, 15px) rotate(180deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0) translate(0, 0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particleAlt {
+  0% {
+    transform: scale(0) translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    transform: scale(1.2) translate(-15px, 15px) rotate(60deg);
+    opacity: 0.6;
+    box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.3);
+  }
+  35% {
+    transform: scale(1.6) translate(20px, 10px) rotate(120deg);
+    opacity: 0.8;
+    box-shadow: 0 0 12px 2px rgba(255, 255, 255, 0.4);
+  }
+  65% {
+    transform: scale(1.2) translate(15px, -15px) rotate(240deg);
+    opacity: 0.6;
+    box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.3);
+  }
+  85% {
+    transform: scale(0.8) translate(-10px, -5px) rotate(300deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0) translate(0, 0) rotate(360deg);
+    opacity: 0;
+  }
+} 
