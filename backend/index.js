@@ -33,15 +33,9 @@ const io = socketIo(server, {
     origin: process.env.NODE_ENV === 'production' 
       ? ['https://panda-panel-frontend.vercel.app', process.env.FRONTEND_URL]
       : ['http://localhost:5173', 'http://localhost:5174'],
-    methods: ['GET', 'POST', 'OPTIONS'],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization']
-  },
-  transports: ['polling'], // Prefer polling for serverless
-  allowEIO3: true, // Allow Engine.IO version 3 (better for older clients)
-  pingTimeout: 60000, // 1 minute ping timeout
-  pingInterval: 25000, // 25 second ping interval
-  cookie: false // Disable socket.io cookie
+    methods: ['GET', 'POST'],
+    credentials: true
+  }
 });
 
 // Socket.io connections
@@ -53,15 +47,7 @@ io.on('connection', (socket) => {
     if (userId) {
       socket.join(userId);
       console.log(`User ${userId} joined their room`);
-      
-      // Send immediate acknowledgment
-      socket.emit('joined', { success: true, userId });
     }
-  });
-  
-  // Handle errors
-  socket.on('error', (error) => {
-    console.error('Socket error:', error);
   });
   
   // Disconnect event
