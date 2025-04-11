@@ -70,15 +70,17 @@ const Register = () => {
       
       // If modId is present in URL, validate as mod-specific referral code
       if (modId) {
-        response = await validateModReferralCode(normalizedCode, modId);
+        response = await validateModReferralCode(modId, normalizedCode);
       } else {
+        // Try regular validation first
+        response = await validateReferralCode(normalizedCode);
+        
         // If regular validation fails, it might be a mod-specific code
-        // Try to extract mod ID from the code and validate again
         if (!response.success && normalizedCode.includes('-')) {
           const storedModId = normalizedCode.split('-')[0].toLowerCase();
           
           // Try validating as a mod-specific code
-          const modSpecificResponse = await validateModReferralCode(normalizedCode, storedModId);
+          const modSpecificResponse = await validateModReferralCode(storedModId, normalizedCode);
           
           if (modSpecificResponse.success) {
             response = modSpecificResponse;
