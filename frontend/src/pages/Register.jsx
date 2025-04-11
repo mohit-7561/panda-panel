@@ -48,16 +48,59 @@ const Register = () => {
     const codeFromUrl = searchParams.get('code');
     const modFromUrl = searchParams.get('mod');
     
+    // First set the modId
     if (modFromUrl) {
       setModId(modFromUrl);
       localStorage.setItem('registrationMod', modFromUrl);
     }
     
+    // Wait for modId to be set before validating
     if (codeFromUrl) {
       setReferralCode(codeFromUrl);
-      validateCode(codeFromUrl);
+      
+      // If there's a modId in the URL, use it directly for validation
+      if (modFromUrl) {
+        setTimeout(() => {
+          validateModReferralCode(modFromUrl, codeFromUrl)
+            .then(response => {
+              handleValidationResponse(response, codeFromUrl);
+            })
+            .catch(error => {
+              console.error("Error during initial validation:", error);
+              setIsCodeValid(false);
+              setReferralCodeError('Error validating code');
+              setCodeValidated(true);
+              setValidating(false);
+            });
+        }, 100);
+      } else {
+        // No mod ID, proceed with regular validation
+        validateCode(codeFromUrl);
+      }
     }
   }, []);
+  
+  // Helper function to handle validation response
+  const handleValidationResponse = (response, code) => {
+    setValidating(false);
+    setCodeValidated(true);
+    
+    if (response.success) {
+      const data = response.data || response;
+      setIsCodeValid(true);
+      setCodeBalance(data.balance || response.balance || 0);
+      setCodeDuration(data.duration || response.duration || '');
+      setReferralCodeError('');
+    } else {
+      setIsCodeValid(false);
+      // Specific error message for used codes
+      if (response.isUsed) {
+        setReferralCodeError('This referral code has already been used');
+      } else {
+        setReferralCodeError(response.message || 'Invalid referral code');
+      }
+    }
+  };
   
   const validateCode = async (code) => {
     setValidating(true);
@@ -89,25 +132,10 @@ const Register = () => {
         }
       }
       
-      if (response.success) {
-        const data = response.data || response;
-        setIsCodeValid(true);
-        setCodeBalance(data.balance || response.balance || 0);
-        setCodeDuration(data.duration || response.duration || '');
-        setReferralCodeError('');
-      } else {
-        setIsCodeValid(false);
-        // Specific error message for used codes
-        if (response.isUsed) {
-          setReferralCodeError('This referral code has already been used');
-        } else {
-          setReferralCodeError(response.message || 'Invalid referral code');
-        }
-      }
+      handleValidationResponse(response, normalizedCode);
     } catch (error) {
       setIsCodeValid(false);
       setReferralCodeError('Error validating code');
-    } finally {
       setCodeValidated(true);
       setValidating(false);
     }
