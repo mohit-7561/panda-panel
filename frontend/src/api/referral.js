@@ -151,8 +151,22 @@ export const registerWithReferralCode = async (username, password, code) => {
 };
 
 // Validate a mod-specific referral code
-export const validateModReferralCode = async (modId, code) => {
+export const validateModReferralCode = async (modIdOrCode, codeOrModId) => {
   try {
+    // Handle both parameter orders for backward compatibility
+    // If the first parameter looks like a code and the second like a modId
+    let modId, code;
+    
+    if (typeof modIdOrCode === 'string' && modIdOrCode.includes('-')) {
+      // First parameter looks like a code, assume parameters are swapped
+      code = modIdOrCode;
+      modId = codeOrModId;
+    } else {
+      // Normal parameter order
+      modId = modIdOrCode;
+      code = codeOrModId;
+    }
+    
     // Normalize code by trimming whitespace and converting to uppercase
     const normalizedCode = code.trim().toUpperCase();
     logger.info(`Validating referral code ${normalizedCode} for mod ${modId}`);
